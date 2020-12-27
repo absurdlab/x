@@ -1,4 +1,4 @@
-package codecx
+package hashx
 
 import "crypto/sha256"
 
