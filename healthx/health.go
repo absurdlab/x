@@ -1,4 +1,4 @@
-package health
+package healthx
 
 import (
 	"github.com/absurdlab/x/httpx"
