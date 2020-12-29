@@ -14,6 +14,6 @@ func Base64Std(raw []byte) string {
 }
 
 // Hex is an Encoder that encodes raw data in hex format
-func Hex(raw []string) string {
+func Hex(raw []byte) string {
 	return fmt.Sprintf("%x", raw)
 }
