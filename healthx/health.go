@@ -55,9 +55,9 @@ func (h *Handler) Status(rw http.ResponseWriter, r *http.Request) {
 	}
 
 	httpx.Render(rw,
-		httpx.SetStatus(httpStatus),
 		httpx.SetApplicationJSON(),
 		httpx.SetNoCache(),
+		httpx.SetStatus(httpStatus),
 		httpx.SetJSONPayload(status),
 	)
 }
