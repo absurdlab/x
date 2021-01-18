@@ -14,6 +14,7 @@ import (
 	"strings"
 )
 
+// Get is NewRequest with http GET method.
 func Get(ctx context.Context, url string, options ...RequestOpt) (*http.Request, error) {
 	req, err := NewRequest(ctx, http.MethodGet, url, options...)
 	if err != nil {
@@ -22,6 +23,7 @@ func Get(ctx context.Context, url string, options ...RequestOpt) (*http.Request,
 	return req, nil
 }
 
+// Post is NewRequest with http POST method.
 func Post(ctx context.Context, url string, options ...RequestOpt) (*http.Request, error) {
 	req, err := NewRequest(ctx, http.MethodPost, url, options...)
 	if err != nil {
@@ -30,6 +32,7 @@ func Post(ctx context.Context, url string, options ...RequestOpt) (*http.Request
 	return req, nil
 }
 
+// Put is NewRequest with http PUT method.
 func Put(ctx context.Context, url string, options ...RequestOpt) (*http.Request, error) {
 	req, err := NewRequest(ctx, http.MethodPut, url, options...)
 	if err != nil {
@@ -38,6 +41,7 @@ func Put(ctx context.Context, url string, options ...RequestOpt) (*http.Request,
 	return req, nil
 }
 
+// Delete is NewRequest with http DELETE method.
 func Delete(ctx context.Context, url string, options ...RequestOpt) (*http.Request, error) {
 	req, err := NewRequest(ctx, http.MethodDelete, url, options...)
 	if err != nil {
@@ -46,6 +50,8 @@ func Delete(ctx context.Context, url string, options ...RequestOpt) (*http.Reque
 	return req, nil
 }
 
+// NewRequest creates a new http.Request with the given method and url, and applies a series of RequestOpt to it to
+// further configure the http.Request.
 func NewRequest(ctx context.Context, method string, url string, options ...RequestOpt) (*http.Request, error) {
 	req, err := http.NewRequestWithContext(ctx, method, url, nil)
 	if err != nil {
